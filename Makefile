@@ -58,6 +58,23 @@ OBJS += \
       $(PWD)/CORTEX_M4F_STM32F4/main.o \
       $(PWD)/CORTEX_M4F_STM32F4/startup/system_stm32f4xx.o \
       #$(PWD)/CORTEX_M4F_STM32F4/stm32f4xx_it.o \
+# LIB r3d
+CFLAGS += -I $(PWD)/CORTEX_M4F_STM32F4/game/libs/r3d
+OBJS += $(PWD)/CORTEX_M4F_STM32F4/game/libs/r3d/r3d.o
+
+# LIB r3dfb
+CFLAGS += -I $(PWD)/CORTEX_M4F_STM32F4/game/libs/r3dfb-stm32f429-discovery
+OBJS += $(PWD)/CORTEX_M4F_STM32F4/game/libs/r3dfb-stm32f429-discovery/r3dfb.o
+
+# file system link       
+OBJS += \
+    $(PWD)/CORTEX_M4F_STM32F4/src/filesystem.o \
+    $(PWD)/CORTEX_M4F_STM32F4/src/fio.o \
+    $(PWD)/CORTEX_M4F_STM32F4/src/hash-djb2.o \
+    $(PWD)/CORTEX_M4F_STM32F4/src/clib.o \
+    $(PWD)/CORTEX_M4F_STM32F4/src/host.o \
+    $(PWD)/CORTEX_M4F_STM32F4/src/romfs.o  \
+    $(PWD)/CORTEX_M4F_STM32F4/src/osdebug.o \
 
 OBJS += \
       $(PWD)/croutine.o \
